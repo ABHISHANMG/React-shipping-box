@@ -1,9 +1,9 @@
-import { type Box, type DestinationCountry, COUNTRY_MULTIPLIERS } from '../types/Box';
+import { type Box, COUNTRY_MULTIPLIERS } from '../types/Box';
 import { boxService } from '../services/BoxService';
 
 class BoxController {
   // Calculate shipping cost based on weight and destination
-  calculateShippingCost(weight: number, destination: DestinationCountry): number {
+  calculateShippingCost(weight: number, destination: string): number {
     const multiplier = COUNTRY_MULTIPLIERS[destination];
     return weight * multiplier;
   }
@@ -12,7 +12,7 @@ class BoxController {
   async saveBox(boxData: Omit<Box, 'id' | 'shippingCost'>): Promise<Box> {
     const shippingCost = this.calculateShippingCost(
       boxData.weight,
-      boxData.destinationCountry as DestinationCountry
+      boxData.destinationCountry
     );
 
     const newBox: Box = {

@@ -2,11 +2,6 @@ import { type Box } from '../types/Box';
 
 const STORAGE_KEY = 'shipping_boxes';
 
-
-// Service layer for API endpoints
-// Currently uses localStorage for persistence
-//  Can be easily replaced with actual API calls
-
 class BoxService {
   // Save box endpoint
   async saveBox(box: Box): Promise<Box> {

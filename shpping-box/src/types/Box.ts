@@ -2,16 +2,16 @@ export interface Box {
   id: string;
   receiverName: string;
   weight: number;
-  boxColor: string; // RGB format: "255, 255, 255"
+  boxColor: string;
   destinationCountry: string;
-  shippingCost: number; // in INR
+  shippingCost: number;
 }
 
 export type DestinationCountry = 'Sweden' | 'China' | 'Brazil' | 'Australia';
 
 export interface CountryMultiplier {
   country: DestinationCountry;
-  multiplier: number; // Cost per kg in INR
+  multiplier: number;
 }
 
 export const COUNTRY_MULTIPLIERS: Record<DestinationCountry, number> = {

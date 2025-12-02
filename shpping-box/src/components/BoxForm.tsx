@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { useBoxes } from '../hooks/useBoxes';
-import { type DestinationCountry, COUNTRY_MULTIPLIERS } from '../types/Box';
+import { COUNTRY_MULTIPLIERS } from '../types/Box';
 import { hexToRgb } from '../utils/rgbConverter';
 import './BoxForm.css';
 
@@ -10,7 +10,7 @@ const BoxForm = () => {
     receiverName: '',
     weight: '',
     boxColor: '#ffffff',
-    destinationCountry: '' as DestinationCountry | '',
+    destinationCountry: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [successMessage, setSuccessMessage] = useState('');
@@ -60,7 +60,7 @@ const BoxForm = () => {
         receiverName: formData.receiverName.trim(),
         weight,
         boxColor: rgbColor,
-        destinationCountry: formData.destinationCountry as DestinationCountry,
+        destinationCountry: formData.destinationCountry,
       });
 
       // Reset form
@@ -68,7 +68,7 @@ const BoxForm = () => {
         receiverName: '',
         weight: '',
         boxColor: '#ffffff',
-        destinationCountry: '' as DestinationCountry | '',
+        destinationCountry: '',
       });
       setErrors({});
       setSuccessMessage('Box saved successfully!');
@@ -174,7 +174,7 @@ const BoxForm = () => {
               onChange={(e) =>
                 setFormData((prev) => ({
                   ...prev,
-                  destinationCountry: e.target.value as DestinationCountry,
+                  destinationCountry: e.target.value,
                 }))
               }
               className={errors.destinationCountry ? 'error' : ''}
