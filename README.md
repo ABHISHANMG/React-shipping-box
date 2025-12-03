@@ -102,3 +102,18 @@ npm run build
 * **State** – Managed with React hooks + custom `useBoxes` hook
 
 ---
+
+## Deployment
+
+The project is deployed on Vercel and is automatically updated using CI/CD via GitHub Actions.
+Whenever new code is pushed to the main branch, the latest build is deployed automatically.
+
+### Links
+
+* Live App (Vercel):[https://react-shipping-box.vercel.app/](https://react-shipping-box.vercel.app/)
+
+### CI/CD Setup
+
+* Configured GitHub Actions workflow to trigger deployment on every push
+* Automatic build + deploy pipeline connected with Vercel
+* No manual deployment required
