@@ -48,19 +48,12 @@ src/
 npm install
 ```
 
-2. Create a `.env` file in the root directory (optional):
-```env
-VITE_API_BASE_URL=http://localhost:3000/api
-VITE_APP_NAME=Shipping Box
-VITE_DEFAULT_CURRENCY=INR
-```
-
-3. Start the development server:
+2. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Build for production:
+3. Build for production:
 ```bash
 npm run build
 ```
@@ -123,5 +116,5 @@ Shipping cost = Weight (kg) × Country Multiplier (INR/kg)
 - `BoxService` provides API endpoints:
   - `saveBox()`: Save a new box
   - `getAllBoxes()`: Retrieve all boxes
-- Currently uses localStorage for persistence
+- Currently uses `localStorage` for persistence
 - Can be easily replaced with actual API calls
